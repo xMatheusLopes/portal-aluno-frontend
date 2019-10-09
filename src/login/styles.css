@@ -1,0 +1,59 @@
+.container {
+    top: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(239, 239, 239);
+    overflow: auto;
+    display: flex;
+    
+}
+.container .content {
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .card {
+    padding: 16px;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .card h2 {
+    margin-top: 0;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+input {
+    padding: 16px;
+    border-radius: 8px;
+    outline: none;
+    border: solid 1px #cecece;
+    width: 30vw;
+}
+@media only screen and (max-width: 720px) {
+    input {
+        width: 70vw!important;        
+    }
+}
+
+button {
+    margin-top: 10px;
+    background: #13c8ff;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
