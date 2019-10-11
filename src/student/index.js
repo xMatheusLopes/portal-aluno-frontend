@@ -7,13 +7,7 @@ import axios from 'axios';
 
 import Toolbar from '../layouts/toolbar';
 
-import 'devextreme/dist/css/dx.common.css';
-import 'devextreme/dist/css/dx.light.css';
-
-import DataGrid,
-{
-    Column
-} from 'devextreme-react/data-grid';
+import DataGrid, { Column } from 'devextreme-react/data-grid';
 
 export default class Student extends Component {
     constructor(props) {

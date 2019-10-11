@@ -5,13 +5,7 @@ import api from '../api';
 import axios from 'axios';
 import Toolbar from '../layouts/toolbar';
 
-import 'devextreme/dist/css/dx.common.css';
-import 'devextreme/dist/css/dx.light.css';
-
-import DataGrid,
-{
-    Column
-} from 'devextreme-react/data-grid';
+import DataGrid, { Column } from 'devextreme-react/data-grid';
 
 export default class Teacher extends Component {
     constructor(props) {
@@ -43,7 +37,7 @@ export default class Teacher extends Component {
     render() {
         return (
             <div>
-                <Toolbar history={this.props} />
+                <Toolbar />
                 <div className='Student-container'>
                     <div className='Student-content'>
                         <div className='Student-card'>

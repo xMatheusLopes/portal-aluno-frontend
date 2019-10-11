@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
+
 import * as serviceWorker from './serviceWorker';
 
 import { Route, BrowserRouter as Router } from 'react-router-dom'

@@ -13,7 +13,8 @@ class Toolbar extends Component {
     render() {
         return (
             <div className="toolbar">
-                <button onClick={this.logout}>Sair</button>
+                <h2>Portal do Aluno</h2>
+                <button className="white-button" onClick={this.logout}>Sair</button>
             </div>
         );
     }
