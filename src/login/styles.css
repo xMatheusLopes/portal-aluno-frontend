@@ -1,4 +1,4 @@
-.container {
+.Login-container {
     top: 0;
     position: absolute;
     left: 0;
@@ -9,7 +9,7 @@
     display: flex;
     
 }
-.container .content {
+.Login-container .Login-content {
     align-items: center;
     justify-content: center;
     flex: 1;
@@ -17,7 +17,7 @@
     flex-direction: column;
 }
 
-.container .content .card {
+.Login-container .Login-content .Login-card {
     padding: 16px;
     background: white;
     border-radius: 5px;
@@ -25,35 +25,12 @@
     flex-direction: column;
 }
 
-.container .content .card h2 {
+.Login-container .Login-content .Login-card h2 {
     margin-top: 0;
 }
 
-.error {
+.Login-error {
     color: red;
     text-align: center;
 }
 
-input {
-    padding: 16px;
-    border-radius: 8px;
-    outline: none;
-    border: solid 1px #cecece;
-    width: 30vw;
-}
-@media only screen and (max-width: 720px) {
-    input {
-        width: 70vw!important;        
-    }
-}
-
-button {
-    margin-top: 10px;
-    background: #13c8ff;
-    padding: 10px;
-    font-weight: 600;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-}

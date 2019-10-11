@@ -4,12 +4,17 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import { Route, BrowserRouter as Router } from 'react-router-dom'
+
 import Login from './login/index'
+import Teacher from './teacher/index'
+import Student from './student/index'
 
 const routing = (
     <Router>
         <div className="fullscreen">
-            <Route path="/" component={Login} />
+            <Route exact path="/" component={Login} />
+            <Route path="/teacher" component={Teacher} />
+            <Route path="/student" component={Student} />
         </div>
     </Router>
 )

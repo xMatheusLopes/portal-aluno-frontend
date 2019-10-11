@@ -1,32 +1,49 @@
 import React from 'react'
 import './styles.css'
+import '../App.css'
 
 import axios from 'axios'
+
 const api = require('../api')
 
-class Login extends React.Component {
+export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = { email: '', error: false };
-
-        this.emailChange = this.emailChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        let user = window.localStorage.getItem('user');
+        if (user) {
+            user = JSON.parse(user);
+            if (user.professor) {
+                this.redirect('/teacher');
+            } else {
+                this.redirect('/student');
+            }
+        }
     }
 
-    emailChange(event) {
+    emailChange = (event) => {
         this.setState({ email: event.target.value });
     }
 
-    onSubmit(event) {
+    onSubmit = (event) => {
         axios.post(`${api.baseUrl}/login`, { email: this.state.email })
             .then(res => {
                 if (!res.data.usuario_id) {
                     this.setState({ error: true });
                 } else {
-                    // Redireciona
+                    window.localStorage.setItem('user', JSON.stringify(res.data));
+                    if (res.data.professor) {
+                        this.redirect('/teacher');
+                    } else {
+                        this.redirect('/student');
+                    }
                 }
             })
         event.preventDefault();
+    }
+
+    redirect = (route) => {
+        this.props.history.push(`${route}`);
     }
 
     render() {
@@ -36,17 +53,16 @@ class Login extends React.Component {
         }
 
         return (
-            <div className="container">
-                <div className="content">
-                    <div className="card">
+            <div className="Login-container">
+                <div className="Login-content">
+                    <div className="Login-card">
                         {incorrectLogin}
                         <h2>Login</h2>
                         <input placeholder="Digite seu e-mail" value={this.state.email} onChange={this.emailChange}></input>
-                        <button onClick={this.onSubmit}>Entrar</button>
+                        <button className="mt-10" onClick={this.onSubmit}>Entrar</button>
                     </div>
                 </div>
             </div>
         )
     }
 }
-export default Login

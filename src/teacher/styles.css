@@ -1,0 +1,39 @@
+.Student-container {
+    top: 58px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(239, 239, 239);
+    overflow: auto;
+    display: flex;
+    
+}
+.Student-container .Student-content {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.Student-container .Student-content .Student-card {
+    padding: 16px;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Student-container .Student-content .Student-card h2{
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 720px) {
+    .Student-container .Student-content {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
