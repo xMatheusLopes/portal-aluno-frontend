@@ -34,6 +34,14 @@ input {
   margin-top: 10px;
 }
 
+.ml-50 {
+  margin-left: 50px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
 button {
   background: #13c8ff;
   padding: 10px;

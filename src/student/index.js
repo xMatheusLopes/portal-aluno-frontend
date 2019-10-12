@@ -9,31 +9,33 @@ import Toolbar from '../layouts/toolbar';
 
 import DataGrid, { Column } from 'devextreme-react/data-grid';
 
-export default class Student extends Component {
+import { withRouter } from 'react-router-dom';
+
+class Student extends Component {
     constructor(props) {
         super(props);
+        const tools = require('../services/tools');
 
         this.state = {
-            user: null,
-            works: []
+            works: [],
+            studentId: props.studentId ? props.studentId : tools.checkAuthenticated(this.props).usuario_id,
+            user: tools.checkAuthenticated(this.props)
         };
-    }
 
-    componentDidMount() {
-        const tools = require('../services/tools');
-        const user = tools.checkAuthenticated(this.props);
-        if (user) {
-            setTimeout(() => {
-                this.setState({ user })
-                this.loadWorks()
-            }, 200);
+        if (this.state.user) {
+            this.loadWorks();
         }
     }
 
     loadWorks = () => {
-        axios.get(`${api.baseUrl}/trabalhos/${this.state.user.usuario_id}`).then(works => {
+        axios.get(`${api.baseUrl}/aluno/${this.state.studentId}/trabalhos`).then(works => {
             this.setState({ works: works.data });
         })
+    }
+
+    onSelectionChanged = (event) => {
+        const work_id = event.selectedRowKeys[0];
+        this.props.history.push(`/student/works/${work_id}`);
     }
 
     render() {
@@ -49,10 +51,13 @@ export default class Student extends Component {
                                 keyExpr={'trabalho_id'}
                                 showBorders={true}
                                 columnHidingEnabled={true}
+                                selection={{ mode: 'single' }}
+                                onSelectionChanged={this.onSelectionChanged}
                             >
                                 <Column dataField={'turma'} width={170} caption={'Turma'} />
                                 <Column dataField={'curso'} width={170} caption={'Curso'} />
                                 <Column dataField={'descricao'} caption={'Descrição'} />
+                                <Column dataField={'nota'} caption={'Nota'} />
                                 <Column dataField={'data'} width={170} caption={'data'} />
                                 <Column dataField={'data_limite'} width={125} caption={'Data Limite'} />
                             </DataGrid>
@@ -64,3 +69,5 @@ export default class Student extends Component {
 
     }
 }
+
+export default withRouter(Student)

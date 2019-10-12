@@ -10,14 +10,20 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 import Login from './login/index'
 import Teacher from './teacher/index'
+import TeacherStudentWorks from './teacher/student-works/index'
+import ClassStudents from './teacher/class-students/index'
 import Student from './student/index'
+import StudentWorks from './student/work/index'
 
 const routing = (
     <Router>
         <div className="fullscreen">
             <Route exact path="/" component={Login} />
-            <Route path="/teacher" component={Teacher} />
-            <Route path="/student" component={Student} />
+            <Route exact path="/teacher" component={Teacher} />
+            <Route path="/teacher/:class_id/students" component={ClassStudents} />
+            <Route path="/teacher/student/:student_id/works" component={TeacherStudentWorks} />
+            <Route exact path="/student" component={Student} />
+            <Route path="/student/works/:work_id" component={StudentWorks} />
         </div>
     </Router>
 )

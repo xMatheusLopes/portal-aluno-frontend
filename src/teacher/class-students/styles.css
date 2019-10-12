@@ -1,0 +1,39 @@
+.Class-Students-container {
+    top: 58px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(239, 239, 239);
+    overflow: auto;
+    display: flex;
+    
+}
+.Class-Students-container .Class-Students-content {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.Class-Students-container .Class-Students-content .Class-Students-card {
+    padding: 16px;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Class-Students-container .Class-Students-content .Class-Students-card h2{
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 720px) {
+    .Class-Students-container .Class-Students-content {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
