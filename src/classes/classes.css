@@ -24,6 +24,7 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    border: solid 1px #d4d4d4;
 }
 
 .Student-container .Student-content .Student-card h2{

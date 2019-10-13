@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './styles.css';
+import './class-students.css';
 
-import api from '../../api';
+import api from '../api';
 import axios from 'axios';
 
-import Toolbar from '../../layouts/toolbar';
+import Toolbar from '../layouts/toolbar';
 
 import DataGrid, { Column } from 'devextreme-react/data-grid';
 
@@ -17,7 +17,7 @@ export default class ClassStudents extends Component {
     }
 
     componentDidMount() {
-        const tools = require('../../services/tools');
+        const tools = require('../services/tools');
         const user = tools.checkAuthenticated(this.props);
         if (user) {
             this.loadStudents();
@@ -42,7 +42,7 @@ export default class ClassStudents extends Component {
                 <div className='Class-Students-container'>
                     <div className='Class-Students-content'>
                         <div className='Class-Students-card'>
-                            <h2>Lista de ALunos</h2>
+                            <h2>Lista de alunos</h2>
                             <DataGrid id={'grid-container'}
                                 dataSource={this.state.students}
                                 keyExpr={'aluno_id'}

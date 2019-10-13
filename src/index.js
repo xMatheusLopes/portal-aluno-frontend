@@ -8,12 +8,12 @@ import * as serviceWorker from './serviceWorker';
 
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 
-import Login from './login/index'
-import Teacher from './teacher/index'
-import TeacherStudentWorks from './teacher/student-works/index'
-import ClassStudents from './teacher/class-students/index'
-import Student from './student/index'
-import StudentWorks from './student/work/index'
+import Login from './login/login'
+import Teacher from './classes/classes'
+import TeacherStudentWorks from './student-works/student-works'
+import ClassStudents from './class-students/class-students'
+import Student from './works/works'
+import StudentWorks from './work/work'
 
 const routing = (
     <Router>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import './styles.css';
+import './toolbar.css';
 
 class Toolbar extends Component {
     logout = () => {

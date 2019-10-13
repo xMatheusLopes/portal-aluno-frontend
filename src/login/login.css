@@ -23,6 +23,7 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    border: solid 1px #d4d4d4;
 }
 
 .Login-container .Login-content .Login-card h2 {

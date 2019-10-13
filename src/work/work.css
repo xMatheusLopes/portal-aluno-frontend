@@ -7,7 +7,6 @@
     background: rgb(239, 239, 239);
     overflow: auto;
     display: flex;
-    
 }
 .Student-Works-container .Student-Works-content {
     flex: 1 1;
@@ -23,11 +22,18 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    border: solid 1px #d4d4d4;
 }
 
 .Student-Works-container .Student-Works-content .Student-Works-card .card-items {
     display: flex;
     flex-direction: row;
+}
+
+.Student-Works-container .Student-Works-content .Student-Works-card .divider {
+    border: solid 1px #efefef;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .Student-Works-container .Student-Works-content .Student-Works-card .card-items a {
@@ -38,15 +44,20 @@
     padding: 10px;
 }
 
+.Student-Works-container .Student-Works-content .Student-Works-card h1{
+    margin-top: 0;
+}
 .Student-Works-container .Student-Works-content .Student-Works-card h2{
     margin-top: 0;
     font-size: 18px;
+    font-weight: 400;
 }
 .Student-Works-container .Student-Works-content .Student-Works-card h3{
     margin-top: 0;
     margin-bottom: 0;
     color: grey;
     font-size: 16px;
+    font-weight: 400;
 }
 
 @media only screen and (max-width: 720px) {
@@ -81,11 +92,11 @@
     padding: 10px!important;
 }
 
-input {
+.Student-Works-input {
     width: 5vw!important;
     margin-right: 10px!important;
 }
 
-h1 {
+.Student-Works-h1 {
     margin-top: 0;
 }

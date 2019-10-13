@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Student from '../../student/index';
+import Student from '../works/index';
 
 export default class StudentWorks extends Component {
     constructor(props) {

@@ -7,7 +7,7 @@
     background: rgb(239, 239, 239);
     overflow: auto;
     display: flex;
-    
+    border: solid 1px #d4d4d4;
 }
 .Class-Students-container .Class-Students-content {
     flex: 1 1;
