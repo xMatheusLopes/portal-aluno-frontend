@@ -1,24 +1,13 @@
-.Student-container {
-    top: 58px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgb(239, 239, 239);
-    overflow: auto;
-    display: flex;
-    
-}
-.Student-container .Student-content {
+.Classes-container .Classes-content {
     flex: 1 1;
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
 }
 
-.Student-container .Student-content .Student-card {
+.Classes-container .Classes-content .Classes-card {
     padding: 16px;
     background: white;
     border-radius: 5px;
@@ -27,14 +16,19 @@
     border: solid 1px #d4d4d4;
 }
 
-.Student-container .Student-content .Student-card h2{
-    margin-top: 0;
+.Classes-container .Classes-content h2{
+    margin-left: 10px;
+}
+
+.Classes-p-10 {
+    padding: 10px;
 }
 
 @media only screen and (max-width: 720px) {
-    .Student-container .Student-content {
-        margin-top: 0;
-        margin-left: 0;
-        margin-right: 0;
+    .Classes-container .Classes-content {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-left: 2%;
+        margin-right: 2%;
     }
 }

@@ -5,7 +5,9 @@ import api from '../api';
 import axios from 'axios';
 import Toolbar from '../layouts/toolbar';
 
-import DataGrid, { Column } from 'devextreme-react/data-grid';
+import MaterialTable from './components/MaterialTable';
+
+import { Card, Typography } from '@material-ui/core';
 
 export default class Teacher extends Component {
     constructor(props) {
@@ -28,8 +30,7 @@ export default class Teacher extends Component {
         })
     }
 
-    onSelectionChanged = (event) => {
-        const class_id = event.selectedRowKeys[0];
+    onSelectionChanged = (class_id) => {
         this.props.history.push(`/teacher/${class_id}/students`);
     }
 
@@ -37,28 +38,15 @@ export default class Teacher extends Component {
         return (
             <div>
                 <Toolbar />
-                <div className='Student-container'>
-                    <div className='Student-content'>
-                        <div className='Student-card'>
-                            <h2>Lista de turmas</h2>
-                            <DataGrid id={'grid-container'}
-                                dataSource={this.state.works}
-                                keyExpr={'turma_id'}
-                                showBorders={true}
-                                columnHidingEnabled={true}
-                                selection={{ mode: 'single' }}
-                                onSelectionChanged={this.onSelectionChanged}
-                            >
-                                <Column dataField={'turma'} width={170} caption={'Turma'} />
-                                <Column dataField={'curso'} width={170} caption={'Curso'} />
-                                <Column dataField={'materia_atual'} caption={'Matéria'} />
-                                <Column dataField={'periodo'} width={170} caption={'Período'} />
-                            </DataGrid>
-                        </div>
+                <div className='Classes-container'>
+                    <div className='Classes-content'>
+                        <Card className="Classes-p-10" elevation={3}>
+                            <Typography variant="h5">Lista de turmas</Typography>
+                            <MaterialTable className="mt-10" works={this.state.works} onPress={this.onSelectionChanged} />
+                        </Card>
                     </div>
                 </div>
             </div>
-        );
-
+        )
     }
 }

@@ -1,14 +1,3 @@
-.Student-container {
-    top: 58px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgb(239, 239, 239);
-    overflow: auto;
-    display: flex;
-    
-}
 .Student-container .Student-content {
     flex: 1 1;
     display: flex;

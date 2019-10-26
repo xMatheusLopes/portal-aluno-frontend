@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Toolbar as MaterialToolbar, Paper } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 
 import './toolbar.css';
 
@@ -11,10 +13,14 @@ class Toolbar extends Component {
 
     render() {
         return (
-            <div className="toolbar">
-                <h2>Portal do Aluno</h2>
-                <button className="white-button" onClick={this.logout}>Sair</button>
-            </div>
+            <Paper elevation={3}>
+                <MaterialToolbar className="toolbar-color toolbar">
+                    <Typography variant="h5">
+                        Portal do Aluno
+                    </Typography>
+                    <Button variant="contained" onClick={this.logout}>Sair</Button>
+                </MaterialToolbar>
+            </Paper>
         );
     }
 }
