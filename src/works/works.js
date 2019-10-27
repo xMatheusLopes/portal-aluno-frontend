@@ -6,8 +6,9 @@ import api from '../api';
 import axios from 'axios';
 
 import Toolbar from '../layouts/toolbar';
+import MaterialTable from './components/MaterialTable';
 
-import DataGrid, { Column } from 'devextreme-react/data-grid';
+import { Card, Typography } from '@material-ui/core';
 
 import { withRouter } from 'react-router-dom';
 
@@ -33,8 +34,7 @@ class Student extends Component {
         })
     }
 
-    onSelectionChanged = (event) => {
-        const work_id = event.selectedRowKeys[0];
+    onSelectionChanged = (work_id) => {
         this.props.history.push(`/student/works/${work_id}`);
     }
 
@@ -44,24 +44,10 @@ class Student extends Component {
                 <Toolbar />
                 <div className='Student-container'>
                     <div className='Student-content'>
-                        <div className='Student-card'>
-                            <h2>Lista de trabalhos</h2>
-                            <DataGrid id={'grid-container'}
-                                dataSource={this.state.works}
-                                keyExpr={'trabalho_id'}
-                                showBorders={true}
-                                columnHidingEnabled={true}
-                                selection={{ mode: 'single' }}
-                                onSelectionChanged={this.onSelectionChanged}
-                            >
-                                <Column dataField={'turma'} width={170} caption={'Turma'} />
-                                <Column dataField={'curso'} width={170} caption={'Curso'} />
-                                <Column dataField={'descricao'} caption={'Descrição'} />
-                                <Column dataField={'nota'} caption={'Nota'} />
-                                <Column dataField={'data'} width={170} caption={'data'} />
-                                <Column dataField={'data_limite'} width={125} caption={'Data Limite'} />
-                            </DataGrid>
-                        </div>
+                        <Card className="Classes-p-10" elevation={3}>
+                            <Typography variant="h5">Lista de trabalhos</Typography>
+                            <MaterialTable className="mt-10" works={this.state.works} onPress={this.onSelectionChanged} />
+                        </Card>
                     </div>
                 </div>
             </div>

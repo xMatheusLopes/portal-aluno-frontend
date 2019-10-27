@@ -6,8 +6,9 @@ import axios from 'axios';
 
 import Toolbar from '../layouts/toolbar';
 
-import DataGrid, { Column } from 'devextreme-react/data-grid';
+import MaterialTable from './components/MaterialTable';
 
+import { Card, Typography } from '@material-ui/core';
 
 export default class ClassStudents extends Component {
     constructor(props) {
@@ -30,8 +31,7 @@ export default class ClassStudents extends Component {
         })
     }
 
-    onSelectionChanged = (event) => {
-        const student_id = event.selectedRowKeys[0];
+    onSelectionChanged = (student_id) => {
         this.props.history.push(`/teacher/student/${student_id}/works`);
     }
 
@@ -41,19 +41,10 @@ export default class ClassStudents extends Component {
                 <Toolbar />
                 <div className='Class-Students-container'>
                     <div className='Class-Students-content'>
-                        <div className='Class-Students-card'>
-                            <h2>Lista de alunos</h2>
-                            <DataGrid id={'grid-container'}
-                                dataSource={this.state.students}
-                                keyExpr={'aluno_id'}
-                                showBorders={true}
-                                columnHidingEnabled={true}
-                                selection={{ mode: 'single' }}
-                                onSelectionChanged={this.onSelectionChanged}
-                            >
-                                <Column dataField={'nome'} caption={'Nome'} />
-                            </DataGrid>
-                        </div>
+                        <Card className="Classes-p-10" elevation={3}>
+                            <Typography variant="h5">Lista de alunos</Typography>
+                            <MaterialTable className="mt-10" works={this.state.students} onPress={this.onSelectionChanged} />
+                        </Card>
                     </div>
                 </div>
             </div>

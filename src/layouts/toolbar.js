@@ -18,7 +18,7 @@ class Toolbar extends Component {
                     <Typography variant="h5">
                         Portal do Aluno
                     </Typography>
-                    <Button variant="contained" onClick={this.logout}>Sair</Button>
+                    <Button color="secondary" variant="contained" onClick={this.logout}>Sair</Button>
                 </MaterialToolbar>
             </Paper>
         );
