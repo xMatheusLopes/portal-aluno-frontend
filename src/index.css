@@ -51,6 +51,10 @@ input {
   margin-bottom: 20px;
 }
 
+.mb-16 {
+  margin-bottom: 16px;
+}
+
 button {
   background: #13c8ff;
   padding: 10px;

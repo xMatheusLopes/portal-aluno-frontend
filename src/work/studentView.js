@@ -7,36 +7,36 @@ export default function RenderStudentView({ state, onChange, onSubmit, formatBoo
         return (
             <div className='Student-Works-container'>
                 <div className='Student-Works-content'>
-                    <Card>
+                    <Card elevation={3}>
                         <CardContent>
                             <Typography variant="h5">Trabalho</Typography>
-                            <h1>Trabalho</h1>
                             <div className="card-items">
                                 <div>
-                                    <h3>Descrição:</h3>
-                                    <h2>{state.work ? state.work.descricao : ''}</h2>
-                                    <h3>Turma:</h3>
-                                    <h2>{state.work ? state.work.turma : ''}</h2>
-                                    <h3>Curso:</h3>
-                                    <h2>{state.work ? state.work.curso : ''}</h2>
-                                    <h3>Data:</h3>
-                                    <h2>{state.work ? state.work.data : ''}</h2>
-                                    <h3>Data Limite:</h3>
-                                    <h2>{state.work ? state.work.data_limite : ''}</h2>
+                                    <Typography color="textSecondary" variant="subtitle1">Descrição</Typography>
+                                    <Typography variant="body1">{state.work ? state.work.descricao : ''}</Typography>
+                                    <Typography color="textSecondary" variant="subtitle1">Turma</Typography>
+                                    <Typography variant="body1">{state.work ? state.work.turma : ''}</Typography>
+                                    <Typography color="textSecondary" variant="subtitle1">Curso</Typography>
+                                    <Typography variant="body1">{state.work ? state.work.curso : ''}</Typography>
+                                    <Typography color="textSecondary" variant="subtitle1">Data</Typography>
+                                    <Typography variant="body1">{state.work ? state.work.data : ''}</Typography>
+                                    <Typography color="textSecondary" variant="subtitle1">Data Limite</Typography>
+                                    <Typography variant="body1">{state.work ? state.work.data_limite : ''}</Typography>
                                 </div>
                                 <div className="divider">
                                 </div>
                                 <div>
-                                    <h3>Enviado:</h3>
-                                    <h2>{state.work ? formatBool(state.work.enviado) : ''}</h2>
-                                    <h3>Nota:</h3>
-                                    <h2>{state.work ? state.work.nota : ''}</h2>
+                                    <Typography color="textSecondary" variant="subtitle1">Enviado</Typography>
+                                    <Typography variant="body1">{state.work ? formatBool(state.work.enviado) : ''}</Typography>
+                                    <Typography color="textSecondary" variant="subtitle1">Nota</Typography>
+                                    <Typography variant="body1">{state.work ? state.work.nota : ''}</Typography>
                                     <div className="Student-Works-upload">
-                                        <h3>Trabalho:</h3>
+                                        <Typography color="textSecondary" variant="subtitle1">Trabalho</Typography>
+                                        <div className="mb-16"></div>
                                         <label htmlFor="file">Upload</label>
                                         <input type="file" id="file" name="file" onChange={onChange} />
                                         <div className="submitArea">
-                                            <h4>{state.file ? state.file.name : ''}</h4>
+                                            <h4>{state.file ? 'Arquivo Anexado' : ''}</h4>
                                             <RenderSubmitButton onSubmit={onSubmit} fileName={state.file ? state.file.name : null} />
                                         </div>
                                     </div>
