@@ -7,11 +7,11 @@ export default function RenderStudentView({ state, onChange, onSubmit, formatBoo
         return (
             <div className='Student-Works-container'>
                 <div className='Student-Works-content'>
-                    <Card elevation={3}>
+                    <Card className="card" elevation={3}>
                         <CardContent>
                             <Typography variant="h5">Trabalho</Typography>
                             <div className="card-items">
-                                <div>
+                                <div class="w-50">
                                     <Typography color="textSecondary" variant="subtitle1">Descrição</Typography>
                                     <Typography variant="body1">{state.work ? state.work.descricao : ''}</Typography>
                                     <Typography color="textSecondary" variant="subtitle1">Turma</Typography>
